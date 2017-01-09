@@ -3,14 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotQuiz.Api.Controllers
 {
-    [Route("")]
+    [Route("api")]
     public class HomeController : Controller 
     {
-        [Route("")]
+        [Route("values")]
         public IActionResult Index() 
         {
             return Ok(new {
-                now = DateTime.UtcNow
+                now = DateTime.UtcNow,
+                values = new[] {
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    Guid.NewGuid()
+                }
             });
         }
     }
