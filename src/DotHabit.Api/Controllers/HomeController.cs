@@ -13,7 +13,7 @@ namespace DotQuiz.Api.Controllers
             this.env = env;
         }
 
-        [Route("values")]
+        [HttpGet, Route("values")]
         public IActionResult Index() 
         {
             return Ok(new {
