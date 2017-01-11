@@ -14,7 +14,7 @@ namespace DotQuiz.Api.Models
 
         public override string ToString() 
         {
-            return $"{this.Language}-{this.Territory}";
+            return $"{this.Language}_{this.Territory}";
         }
     }
 }
