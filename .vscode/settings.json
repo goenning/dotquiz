@@ -6,7 +6,8 @@
     "**/.hg": true,
     "**/.DS_Store": true,
     "**/bin/": true,
-    "**/obj/": true
+    "**/obj/": true,
+    "**/logs/": true
   },
   "editor.tabSize": 4
 }

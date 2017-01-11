@@ -1,45 +1,50 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DotQuiz.Api.Configuration.Swagger;
 using Serilog;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace DotQuiz.Api
 {
     public class Startup 
     {
-        public Startup()
+        private IConfigurationRoot configuration;
+        private SwaggerConfiguration swaggerConfig = new SwaggerConfiguration();
+        private IHostingEnvironment env;
+
+        public Startup(IHostingEnvironment env)
         {
+            this.env = env;
+            this.configuration = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("config/appsettings.json")
+                .AddJsonFile($"config/appsettings.{env.EnvironmentName}.json", true)
+                .Build();
+                
+            this.configuration.GetSection("Swagger").Bind(this.swaggerConfig);
+
             Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .WriteTo.LiterateConsole()
-               .CreateLogger();
+                .ReadFrom.Configuration(this.configuration)
+                .CreateLogger();
         }
 
         public void ConfigureServices(IServiceCollection services) 
         {
             services.AddMvc();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "dotQuiz API v1", Version = "v1" });
-            });
+            services.AddCustomSwagger(this.swaggerConfig);
         }
 
         public void Configure(IApplicationBuilder app, 
-                              IHostingEnvironment env,
                               ILoggerFactory logger,
                               IApplicationLifetime appLifetime)
         {
+            app.UseCustomSwagger(this.swaggerConfig);
+            app.UseMvc();
+            
             logger.AddSerilog();
             appLifetime.ApplicationStopped.Register(Log.CloseAndFlush);
-            
-            app.UseSwagger();
-            app.UseSwaggerUi(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotQuiz API v1");
-            });
-            app.UseMvc();
         }
     }
 }

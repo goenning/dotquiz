@@ -1721,6 +1721,37 @@
           "lib/netstandard1.3/Serilog.Extensions.Logging.dll": {}
         }
       },
+      "Serilog.Settings.Configuration/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
+          "Microsoft.Extensions.DependencyModel": "1.0.0",
+          "Serilog": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Serilog.Settings.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Serilog.Settings.Configuration.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.3.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading.Timer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
       "Serilog.Sinks.Literate/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -1732,6 +1763,22 @@
         },
         "runtime": {
           "lib/netstandard1.3/Serilog.Sinks.Literate.dll": {}
+        }
+      },
+      "Serilog.Sinks.RollingFile/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog.Sinks.File": "3.1.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding.Extensions": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/1.0.0-rc1": {
@@ -4146,7 +4193,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "j75mtbEbS7hNj6iOIARpGV69yAxteJClkLzGZiik7IthW3La/khcEE25sR+YqH8pDF6xmT/zXdeF1Ub2Di4OWQ==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.Analyzers/1.1.0",
       "files": [
@@ -4162,7 +4209,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Common/1.3.0": {
-      "sha512": "A5Uj5Hq0yxN8HWFVCKymeSYoaX8j6b4OscR4Q4uT6qynjtsPRfpe8+o5ScbviouaVYuo+k7RWP9989/QKpYqTA==",
+      "sha512": "V09G35cs0CT1C4Dr1IEOh8IGfnWALEVAOO5JXsqagxXwmYR012TlorQ+vx2eXxfZRKs3gAS/r92gN9kRBLba5A==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.Common/1.3.0",
       "files": [
@@ -4178,7 +4225,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.CSharp/1.3.0": {
-      "sha512": "KcLrT4A2dbcYwpfDSdeXh8AkWm4OFY2MToRmhTJL0YUrZDrztjlaHfbK7UEaN6XmUfGBzW9Lcv0Tey2WRUtZBw==",
+      "sha512": "BgWDIAbSFsHuGeLSn/rljLi51nXqkSo4DZ0qEIrHyPVasrhxEVq7aV8KKZ3HEfSFB+GIhBmOogE+mlOLYg19eg==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.CSharp/1.3.0",
       "files": [
@@ -4194,7 +4241,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.VisualBasic/1.3.0": {
-      "sha512": "D4cTaZ47ht0x5VYdtzb56uMLsV6bECFN9CeBLJQTEQSZANZD/jBp5QEQQnjQeeg50QFGCKxOWsSlffipHstNAA==",
+      "sha512": "Sf3k8PkTkWqBmXnnblJbvb7ewO6mJzX6WO2t7m04BmOY5qBq6yhhyXnn/BMM+QCec3Arw3X35Zd8f9eBql0qgg==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.VisualBasic/1.3.0",
       "files": [
@@ -4267,7 +4314,7 @@
       ]
     },
     "Microsoft.DiaSymReader.Native/1.4.0": {
-      "sha512": "/gAaGyuMKgz6YZQwEf5uKP3qFUjhg/C/AlaewtrzxyTTIj7ieWQzaOC7yVslGfmOkoAEedmXWrqe8hrUulL7Pg==",
+      "sha512": "6HpEBMxIi9KJHKnF2ISRy3HsxhRYL1/CdnXGBqSWOUE8uaY5gthzStdQdbPVFxsKCNwsYcfRc11RXjLVvGF5bQ==",
       "type": "package",
       "path": "Microsoft.DiaSymReader.Native/1.4.0",
       "files": [
@@ -4732,7 +4779,7 @@
       ]
     },
     "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
-      "sha512": "JNeZI+utwt5QYYkFhyV8qfVq21E6XL40ERzx09xQqbBvhk75ahdx+Ajmg4oOBy0ausxkZUKwVfjT53TypkSkwg==",
+      "sha512": "SaToCvvsGMxTgtLv/BrFQ5IFMPRE1zpWbnqbpwykJa8W5XiX82CXI6K2o7yf5xS7EP6t/JzFLV0SIDuWpvBZVw==",
       "type": "package",
       "path": "Microsoft.NETCore.Windows.ApiSets/1.0.1",
       "files": [
@@ -5126,6 +5173,32 @@
         "lib/netstandard1.3/Serilog.Extensions.Logging.xml"
       ]
     },
+    "Serilog.Settings.Configuration/2.2.0": {
+      "sha512": "jq8KPftT4DK13yq1qMge7ucPudZaghiUliTOF9iDsroirN3k0pdK148YWLHS2HnQZ8jMe0GDnRUwBMk63DQ2Gw==",
+      "type": "package",
+      "path": "Serilog.Settings.Configuration/2.2.0",
+      "files": [
+        "Serilog.Settings.Configuration.2.2.0.nupkg.sha512",
+        "Serilog.Settings.Configuration.nuspec",
+        "lib/net451/Serilog.Settings.Configuration.dll",
+        "lib/net451/Serilog.Settings.Configuration.xml",
+        "lib/netstandard1.6/Serilog.Settings.Configuration.dll",
+        "lib/netstandard1.6/Serilog.Settings.Configuration.xml"
+      ]
+    },
+    "Serilog.Sinks.File/3.1.0": {
+      "sha512": "/ArxCBDAXzMNIYVxO+4QbfTnytQ1qBlNGv+8Lyx5z1+PTrp0+xjf4o5km+Gn8TbRNg5Kh137TSEKeNwCRCkp8w==",
+      "type": "package",
+      "path": "Serilog.Sinks.File/3.1.0",
+      "files": [
+        "Serilog.Sinks.File.3.1.0.nupkg.sha512",
+        "Serilog.Sinks.File.nuspec",
+        "lib/net45/Serilog.Sinks.File.dll",
+        "lib/net45/Serilog.Sinks.File.xml",
+        "lib/netstandard1.3/Serilog.Sinks.File.dll",
+        "lib/netstandard1.3/Serilog.Sinks.File.xml"
+      ]
+    },
     "Serilog.Sinks.Literate/2.0.0": {
       "sha512": "dR5O5nkzSGQ1IHAVgLENeCMQypj1Ch2IWxQ/2sO/t6k8i6Qej2S7sb5+HhaxXJ9Al0rTv3fsBtlg/cDrX2MKjg==",
       "type": "package",
@@ -5137,6 +5210,19 @@
         "lib/net45/Serilog.Sinks.Literate.xml",
         "lib/netstandard1.3/Serilog.Sinks.Literate.dll",
         "lib/netstandard1.3/Serilog.Sinks.Literate.xml"
+      ]
+    },
+    "Serilog.Sinks.RollingFile/3.2.0": {
+      "sha512": "7jaXpVUofqjaPSgjFKGDExHx04xx9zrjm0XdFzSFDoocfkHtUuvLnFqFwja/CPIqnU1yFZ0iKPdGSy8jbRro6w==",
+      "type": "package",
+      "path": "Serilog.Sinks.RollingFile/3.2.0",
+      "files": [
+        "Serilog.Sinks.RollingFile.3.2.0.nupkg.sha512",
+        "Serilog.Sinks.RollingFile.nuspec",
+        "lib/net45/Serilog.Sinks.RollingFile.dll",
+        "lib/net45/Serilog.Sinks.RollingFile.xml",
+        "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll",
+        "lib/netstandard1.3/Serilog.Sinks.RollingFile.xml"
       ]
     },
     "Swashbuckle.AspNetCore/1.0.0-rc1": {
@@ -5870,7 +5956,7 @@
       ]
     },
     "System.Diagnostics.FileVersionInfo/4.0.0": {
-      "sha512": "N4uW7OsZmhDg6+waiW8ReKY8+G9jnu1QfZLb8bDNm4RRxNP4O/l9hPLe5WbO5rw93H5aEDVUjiVKns72nWfQ4Q==",
+      "sha512": "qjF74OTAU+mRhLaL4YSfiWy3vj6T3AOz8AW37l5zCwfbBfj0k7E94XnEsRaf2TnhE/7QaV6Hvqakoy2LoV8MVg==",
       "type": "package",
       "path": "System.Diagnostics.FileVersionInfo/4.0.0",
       "files": [
@@ -8918,7 +9004,7 @@
       ]
     },
     "System.Text.Encoding.CodePages/4.0.1": {
-      "sha512": "JhtGIS0sUnx3hXZys07voNWPUUWPmru09/yLBxI6D+kJHdc5agD5vOXZuXCXP9pM1w6HkKWAEbCxi4oEfRzwXw==",
+      "sha512": "h4z6rrA/hxWf4655D18IIZ0eaLRa3tQC/j+e26W+VinIHY0l07iEXaAvO0YSYq3MvCjMYy8Zs5AdC1sxNQOB7Q==",
       "type": "package",
       "path": "System.Text.Encoding.CodePages/4.0.1",
       "files": [
@@ -9633,7 +9719,7 @@
       ]
     },
     "System.Xml.XmlDocument/4.0.1": {
-      "sha512": "PWnxdZ2wo1WiScZOZc6IWQvTq/Q/VAugvBPoqeN7XZdPY11xRBzG7lTzuVLlDtnv7yYhDr1DEGe/xd7uJL4UnQ==",
+      "sha512": "2eZu6IP+etFVBBFUFzw2w6J21DqIN5eL9Y8r8JfJWUmV28Z5P0SNU01oCisVHQgHsDhHPnmq2s1hJrJCFZWloQ==",
       "type": "package",
       "path": "System.Xml.XmlDocument/4.0.1",
       "files": [
@@ -9670,7 +9756,7 @@
       ]
     },
     "System.Xml.XPath/4.0.1": {
-      "sha512": "nNKDld+2VMosqP2INvyeSUe8Y9FCgJ4r4dAbVsdU6iVlJXBMrGoVcxYSHJy+HPqaYcI7sfCVTKAMgnellEIgFA==",
+      "sha512": "UWd1H+1IJ9Wlq5nognZ/XJdyj8qPE4XufBUkAW59ijsCPjZkZe0MUzKKJFBr+ZWBe5Wq1u1d5f2CYgE93uH7DA==",
       "type": "package",
       "path": "System.Xml.XPath/4.0.1",
       "files": [
@@ -9707,7 +9793,7 @@
       ]
     },
     "System.Xml.XPath.XDocument/4.0.1": {
-      "sha512": "U9+syXQZvi4t2reCO3S9ojOcTJPBi518GMlnOoq+hdXZuzpSIRNuuXCHoGfQ9YF9VFDuyTXVEP8EVvl1zHWRvQ==",
+      "sha512": "FLhdYJx4331oGovQypQ8JIw2kEmNzCsjVOVYY/16kZTUoquZG85oVn7yUhBE2OZt1yGPSXAL0HTEfzjlbNpM7Q==",
       "type": "package",
       "path": "System.Xml.XPath.XDocument/4.0.1",
       "files": [
@@ -9753,7 +9839,9 @@
       "Microsoft.NETCore.App >= 1.1.0",
       "Serilog >= 2.3.0",
       "Serilog.Extensions.Logging >= 1.3.1",
+      "Serilog.Settings.Configuration >= 2.2.0",
       "Serilog.Sinks.Literate >= 2.0.0",
+      "Serilog.Sinks.RollingFile >= 3.2.0",
       "Swashbuckle.AspNetCore >= 1.0.0-rc1"
     ]
   },
